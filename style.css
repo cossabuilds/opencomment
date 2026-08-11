@@ -1,0 +1,111 @@
+/* Gemeinsames Stylesheet der öffentlichen Seiten (GitHub Pages).
+   Bewusst eine einzige Datei, keine Webfont, kein Framework — dieselbe
+   Zurückhaltung wie in der Erweiterung. Wer den Quelltext einer
+   Datenschutzerklärung ansieht, soll dort nichts finden, das nachlädt. */
+
+/* Farben aus extension/sidebar.css übernommen, damit Website und Erweiterung
+   dieselbe Identität tragen — insbesondere der Akzent #D7BA7D (Sandton des
+   VS-Code-Dunkelthemas), der in der Erweiterung Logo, Links und alles
+   Interaktive trägt. */
+:root {
+  --bg:      #0B0E14;   /* --bg-0 der Erweiterung */
+  --bg-card: #161B25;   /* --bg-2 */
+  --fg:      #E6EDF7;
+  --fg-dim:  #8B98AC;
+  --line:    #242C3A;
+  --accent:  #D7BA7D;
+  --radius:  10px;
+}
+
+/* Helles Systemthema respektieren statt Dunkel zu erzwingen: Rechtstexte
+   werden gedruckt und vorgelesen, nicht nur angeschaut.
+   Der Akzent muss dafür ein anderer sein — #D7BA7D kommt auf hellem Grund auf
+   1.81:1 und ist damit als Linkfarbe unbrauchbar. #8A6C33 ist derselbe
+   Farbton, nur abgedunkelt, und erreicht 4.74:1. Nachgerechnet, nicht
+   geschätzt — wie in der Erweiterung. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:      #FBFBF9;
+    --bg-card: #FFFFFF;
+    --fg:      #1B2027;
+    --fg-dim:  #5A6472;
+    --line:    #E3E5E8;
+    --accent:  #8A6C33;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 20px 64px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.wrap { max-width: 46rem; margin: 0 auto; }
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 0 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 30px; height: 30px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.brand { font-size: 20px; font-weight: 650; }
+
+nav { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { color: var(--fg-dim); text-decoration: none; font-size: 15px; }
+nav a:hover, nav a[aria-current="page"] { color: var(--fg); }
+
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 21px; margin: 40px 0 10px; }
+h3 { font-size: 17px; margin: 26px 0 6px; }
+
+.lead { font-size: 19px; color: var(--fg-dim); margin: 0 0 32px; }
+
+a { color: var(--accent); }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+
+dt { font-weight: 650; margin-top: 22px; }
+dd { margin: 4px 0 0; color: var(--fg-dim); }
+
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: .9em;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--fg-dim);
+  font-size: 14px;
+}
+
+footer a { color: var(--fg-dim); }
+
+.stand { color: var(--fg-dim); font-size: 14px; }
