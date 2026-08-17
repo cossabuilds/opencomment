@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, noarchive">
+<title>Datenschutzerklärung — OpenComment</title>
+<meta name="description" content="Was OpenComment lokal speichert, was an den Server geht und wann, und wie du deine Daten löschst.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+  </svg>
+  <span class="brand">OpenComment</span>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="faq.html">FAQ</a>
+    <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+  </nav>
+</header>
+
+<h1>Datenschutzerklärung</h1>
+<p class="lead">
+  Stand: 17. August 2026. Diese Fassung ist massgeblich; die
+  <a href="privacy.html">englische Übersetzung</a> ist ein Service, im
+  Zweifel gilt immer diese deutsche Seite.
+</p>
+
+<div class="card">
+  <p><strong>Diese Seite ist bewusst nicht auffindbar.</strong> Sie steht
+  nicht in Suchmaschinen-Ergebnissen (<code>noindex</code>) und wird nur
+  über den Link in der Erweiterung, im Store-Eintrag oder von dieser
+  Website aus erreicht. Solange OpenComment eine geschlossene Beta ist,
+  soll niemand rein zufällig auf diesem Text landen.</p>
+</div>
+
+<h2>Kurz gesagt</h2>
+<p>
+  OpenComment ist eine Chrome-Erweiterung für Kommentare in
+  <strong>Circles</strong> — kleinen, geschlossenen Runden, in die man nur
+  mit einem Code hineinkommt. Bevor du zustimmst, passiert nichts. Bevor du
+  einem Circle beitrittst, verlässt die Adresse der Seite, die du gerade
+  ansiehst, dein Gerät nicht.
+</p>
+
+<h2>Verantwortlicher</h2>
+<p>
+  <!-- TODO UNL-03: Name des Verantwortlichen einsetzen, sobald bestätigt. -->
+  <strong>TODO — Name des Verantwortlichen</strong><br>
+  E-Mail: cossabuilds@gmail.com
+</p>
+<p>
+  Die vollständige Anschrift (Postfach) wird mit dem Impressum vor einer
+  öffentlichen Freigabe ergänzt.
+</p>
+
+<h2>Was auf deinem Gerät bleibt</h2>
+<p>
+  Ein Teil der Daten verlässt dein Gerät nie. Dazu gehören dein Pseudonym
+  im lokalen Cache, deine Zustimmung, dein zuletzt aktiver Circle, sowie
+  die lokal geführten Listen, welche Antworten und Seiten du schon gesehen
+  bzw. abgehakt hast. Diese lokale Liste kann — weil sie aus den
+  Aktivitäts-Abfragen deiner Circles gespeist wird — auch Seitentitel und
+  Anzeigenamen anderer Circle-Mitglieder enthalten, etwa wer eine Seite als
+  „lesenswert“ markiert hat. Das bleibt auf deinem Gerät, wird aber beim
+  Löschen deines Kontos mit entfernt.
+</p>
+<p>
+  Dein Zugangs-/Erneuerungs-Token liegt ebenfalls lokal, ist aber eine
+  Ausnahme: Es wird bei jeder Anmeldeprüfung an unseren Server geschickt —
+  das ist die technisch notwendige Grundlage jeder Authentifizierung, kein
+  zusätzlicher Datenabfluss über den hier beschriebenen Umfang hinaus,
+  aber eben eine Übertragung, nicht ein reines Vor-Ort-Bleiben.
+</p>
+<p>
+  Ausserdem läuft auf jeder Seite, die du besuchst, im Hintergrund ein
+  kleines Skript, das die Adresse der Seite berechnet — rein lokal, ohne
+  Netzwerkverkehr. Das ist technisch nötig, damit die Erweiterung beim
+  Klick auf ihr Symbol sofort weiss, welche Seite gerade offen ist. Wer das
+  nicht möchte, kann in den Chrome-Erweiterungseinstellungen den
+  Seitenzugriff von OpenComment auf „Bei Klick“ stellen.
+</p>
+
+<h2>Was zu unserem Server geht — und wann</h2>
+<dl>
+  <dt>Vor deiner Zustimmung: nichts</dt>
+  <dd>Weder wird eine Identität angelegt noch ein Request geschickt.</dd>
+
+  <dt>Nach Zustimmung, aber ohne aktiven Circle: keine Seitenadresse</dt>
+  <dd>Ohne aktiven Circle gibt es nichts zu laden — die Adresse der
+      aktuellen Seite verlässt dein Gerät nicht. Der Hintergrundsync (siehe
+      unten) läuft davon unabhängig bereits ab deiner Zustimmung — er fragt
+      nur, was in deinen Circles passiert ist, und liefert ohne Circle
+      einfach nichts zurück.</dd>
+
+  <dt>Sobald du einem Circle beigetreten bist</dt>
+  <dd>Die Adresse der gerade angezeigten Seite geht bei jedem Öffnen der
+      Seitenleiste <strong>und</strong> bei jedem Seitenwechsel, während die
+      Leiste offen ist, an unseren Server — als Suchbegriff, um Kommentare
+      und Reaktionen zu dieser Seite zu finden, nicht als fortlaufend
+      gespeicherter Browserverlauf. Sie steht dabei im Anfragekörper, nicht in der
+      Adresszeile des Requests, und taucht deshalb nicht in gewöhnlichen
+      Server-Zugriffsprotokollen auf.</dd>
+
+  <dt>Der Titel der Seite</dt>
+  <dd>Geht ausschliesslich mit, wenn du selbst etwas beiträgst — einen
+      Kommentar oder eine Reaktion. Beim blossen Ansehen einer Seite bleibt
+      der Titel lokal.</dd>
+
+  <dt>Kommentare, Antworten, Stimmen, Meldungen, Feedback</dt>
+  <dd>Gehen an unseren Server, sobald du sie absendest — jeweils verknüpft
+      mit deiner pseudonymen Kennung.</dd>
+</dl>
+
+<h2>Circles, Anzeigenamen und Zugangscode</h2>
+<p>
+  Wer den Zugangscode eines Circles hat, ist Mitglied und kann dort lesen
+  und schreiben — sonst niemand. Es gibt kein öffentliches Kommentieren.
+  Jedes Mitglied kann den Klartext-Code seiner Circles einsehen und
+  weitergeben; behandle ihn wie einen Schlüssel. Dein Anzeigename gilt
+  jeweils pro Circle und ist für die übrigen Mitglieder sichtbar.
+</p>
+
+<h2>Reaktionen: „Lesenswert“ und „Sehe ich anders“</h2>
+<p>
+  Beide Reaktionen sind an eine Seite und einen Circle gebunden — sie sind
+  nicht gleich sichtbar:
+</p>
+<ul>
+  <li><strong>„Lesenswert“</strong> ist mit deinem Anzeigennamen für die
+      Mitglieder desselben Circles sichtbar, auch für Personen, die den
+      Beitrag selbst nie kommentiert haben.</li>
+  <li><strong>„Sehe ich anders“</strong> bleibt anonym: Deine einzelne
+      Reaktion verlässt den Server nie, nur eine Gesamtzahl wird angezeigt.
+      In sehr kleinen Circles kann diese Zahl unter Umständen dennoch auf
+      einzelne Personen rückschliessen lassen.</li>
+</ul>
+
+<h2>Hinweise im Hintergrund</h2>
+<p>
+  Damit Symbol, Glocke und Feed dir zeigen können, ob dir jemand geantwortet
+  hat und was in deinen Circles läuft, fragt OpenComment etwa alle 30
+  Minuten im Hintergrund nach — ausschliesslich Daten deiner eigenen
+  Circles, nie ganze Seiteninhalte. Du kannst das jederzeit unter
+  <strong>Meine Daten</strong> abschalten: Dann läuft kein Alarm, keine
+  Anfrage und kein Badge mehr. Öffnest du die Seitenleiste trotzdem, laden
+  Kommentare wie gewohnt.
+</p>
+
+<h2>Wo OpenComment nicht funktioniert</h2>
+<p>
+  Login-, Konto- und Bezahlseiten, Adressen mit einem Zugriffs-Token,
+  lokale und interne Adressen (etwa deine Router-Oberfläche),
+  Suchmaschinen, soziale Netzwerke und Mail-Postfächer sind gesperrt — die
+  Erweiterung fragt dort erst gar nicht nach einer Seite. Diese Filterung
+  ist sehr gut, aber nicht vollständig: Ein Router, der über einen Namen
+  statt einer Zahl erreichbar ist (z. B. <code>fritz.box</code>), wird
+  aktuell nicht erkannt.
+</p>
+
+<h2>Löschen und Widerrufen</h2>
+<p>
+  Das sind zwei unterschiedliche Wege, keine Synonyme:
+</p>
+<dl>
+  <dt>Einen einzelnen Kommentar löschen</dt>
+  <dd>Er wird für alle anderen unsichtbar und durch einen Platzhalter
+      ersetzt, damit Antworten darauf lesbar bleiben. Text und Seitenadresse
+      bleiben dabei serverseitig gespeichert und für unseren Betrieb
+      weiterhin lesbar — es gibt derzeit keine zugesagte Frist, nach der
+      sie automatisch entfernt werden.</dd>
+
+  <dt>Zustimmung zurückziehen</dt>
+  <dd>Entfernt nur deine Zustimmung. Deine Kommentare, Reaktionen und
+      Circle-Mitgliedschaften bleiben bestehen; die Seitenleiste fragt beim
+      nächsten Öffnen erneut nach.</dd>
+
+  <dt>Konto löschen</dt>
+  <dd>Der vollständige Weg. Entfernt dein Profil, deine Stimmen, deine
+      Reaktionen und dein Feedback endgültig. Eigene Kommentare ohne fremde
+      Antworten werden gelöscht; eigene Kommentare, auf die geantwortet
+      wurde, werden anonymisiert (Text und Kennung entfernt, ein
+      Platzhalter bleibt für die Antwort stehen). Deine eigenen Meldungen
+      bleiben ohne Personenbezug für die Moderation erhalten. Warst du das
+      letzte Mitglied eines Circles, wird auch dieser mit allen Inhalten
+      gelöscht. Lokal gespeicherte Daten werden dabei ebenfalls entfernt.
+      Die zugrunde liegende technische Anmeldung bei unserem
+      Backend-Anbieter bleibt davon unberührt bestehen — daran arbeiten
+      wir noch.</dd>
+</dl>
+<p>
+  Deinstallieren der Erweiterung löscht keine deiner Serverdaten. Notiere
+  dir vor der Deinstallation deine Kennung (unter „Meine Daten“ sichtbar),
+  falls du später eine Löschung beantragen willst.
+</p>
+
+<h2>Speicherung und Empfänger</h2>
+<p>
+  Deine Daten werden bei unserem Backend-Anbieter Supabase gespeichert
+  (Hosting-Region Zürich, Schweiz/EU). Supabase ist unser
+  Auftragsverarbeiter — keine dritte Partei, an die wir Daten
+  „weitergeben“, sondern der technische Dienstleister, der den Server für
+  uns betreibt. Eine Weitergabe an andere Dritte findet nicht statt, ausser
+  wenn wir gesetzlich dazu verpflichtet sind.
+</p>
+<p>
+  Wir kennen weder deinen echten Namen noch deine E-Mail-Adresse noch
+  deinen Standort. Deine pseudonyme Kennung entsteht über eine anonyme
+  Anmeldung bei Supabase — kein Login nötig.
+</p>
+<p>
+  Neu angelegte Kennungen sind in den ersten 24 Stunden in der Anzahl ihrer
+  Kommentare begrenzt, und mehrere Kommentare in schneller Folge werden
+  gebremst. Das ist eine automatische Verhaltensregel gegen
+  automatisiertes Zumüllen, keine inhaltliche Bewertung.
+</p>
+
+<h2>Deine Rechte</h2>
+<p>
+  Unter <strong>Meine Daten</strong> in der Seitenleiste kannst du jederzeit
+  alles einsehen, was zu deiner Kennung gespeichert ist, deine Zustimmung
+  zurückziehen oder dein Konto vollständig löschen — ohne Wartezeit, ohne
+  Rückfrage an uns nötig. Für alles Weitere erreichst du uns unter der
+  oben genannten E-Mail-Adresse.
+</p>
+
+<h2>Änderungen dieser Erklärung</h2>
+<p>
+  OpenComment befindet sich in aktiver, früher Entwicklung. Diese Erklärung
+  kann sich ändern, insbesondere wenn neue Funktionen neue Datenkategorien
+  einführen. In diesem Fall informieren wir gesondert und holen, wo nötig,
+  eine erneute, spezifische Einwilligung ein — die heutige Zustimmung deckt
+  zukünftige, neue Datenkategorien nicht automatisch ab.
+</p>
+
+<footer>
+  <a href="index.html">Start</a> ·
+  <a href="faq.html">FAQ</a> ·
+  <a href="privacy.html">English version</a>
+</footer>
+
+</div>
+</body>
+</html>

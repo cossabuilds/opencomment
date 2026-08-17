@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, noarchive">
+<title>Privacy Policy — OpenComment</title>
+<meta name="description" content="What OpenComment stores locally, what goes to the server and when, and how to delete your data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+  </svg>
+  <span class="brand">OpenComment</span>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+  </nav>
+</header>
+
+<h1>Privacy Policy</h1>
+<p class="lead">
+  As of August 17, 2026. This is a translation for convenience. The
+  <a href="datenschutz.html">German version</a> is the legally binding
+  text; if the two ever disagree, the German version governs.
+</p>
+
+<div class="card">
+  <p><strong>This page is intentionally not discoverable.</strong> It is
+  excluded from search results (<code>noindex</code>) and reached only via
+  the link in the extension, the store listing, or this website. While
+  OpenComment is a closed beta, nobody should land on this text by
+  accident.</p>
+</div>
+
+<h2>In short</h2>
+<p>
+  OpenComment is a Chrome extension for comments in <strong>circles</strong>
+  — small, closed groups you can only join with a code. Nothing happens
+  before you consent. Before you join a circle, the address of the page
+  you're viewing never leaves your device.
+</p>
+
+<h2>Data controller</h2>
+<p>
+  <!-- TODO UNL-03: insert the controller's name once confirmed. -->
+  <strong>TODO — Controller name</strong><br>
+  Email: cossabuilds@gmail.com
+</p>
+<p>
+  A full postal address (PO box) will be added together with the legal
+  notice ("Impressum") before any public release.
+</p>
+
+<h2>What stays on your device</h2>
+<p>
+  Some data never leaves your device: your pseudonym in the local cache,
+  your consent, your last active circle, and the locally kept lists of
+  which replies and pages you've already seen or marked done. Because that
+  list is fed by your circles' activity data, it can also contain page
+  titles and the display names of other circle members — for example who
+  marked a page "worth reading". This stays on your device but is removed
+  when you delete your account.
+</p>
+<p>
+  Your sign-in token is also stored locally, but it's an exception: it is
+  sent to our server on every authenticated request — that's the
+  technically necessary basis of authentication, not an additional data
+  flow beyond what's described here, but it is a transfer, not something
+  that simply stays put.
+</p>
+<p>
+  In addition, a small script runs in the background on every page you
+  visit to compute that page's address — purely locally, with no network
+  traffic. This is technically necessary so the extension knows
+  immediately which page is open when you click its icon. If you'd rather
+  it didn't, you can set OpenComment's site access to "On click" in
+  Chrome's extension settings.
+</p>
+
+<h2>What goes to our server — and when</h2>
+<dl>
+  <dt>Before you consent: nothing</dt>
+  <dd>No identity is created and no request is sent.</dd>
+
+  <dt>After consent, but without an active circle: no page address</dt>
+  <dd>Without an active circle there is nothing to load — the address of
+      the current page does not leave your device. Background
+      notifications (see below) run independently of this, starting as
+      soon as you consent — they only ask what happened in your circles,
+      and simply return nothing without one.</dd>
+
+  <dt>Once you've joined a circle</dt>
+  <dd>The address of the page currently shown is sent to our server every
+      time you open the sidebar <strong>and</strong> every time you
+      navigate while the sidebar stays open — used only as a search term
+      to find comments and reactions for this page, not as a continuously
+      stored browsing history. It travels in the request body, not in the
+      request's address line, so it does not show up in ordinary server
+      access logs.</dd>
+
+  <dt>The page title</dt>
+  <dd>Is sent only when you contribute something yourself — a comment or a
+      reaction. Merely viewing a page keeps the title local.</dd>
+
+  <dt>Comments, replies, votes, reports, feedback</dt>
+  <dd>Are sent to our server as soon as you submit them, each tied to your
+      pseudonymous identity.</dd>
+</dl>
+
+<h2>Circles, display names and the join code</h2>
+<p>
+  Whoever has a circle's join code is a member and can read and write
+  there — nobody else. There is no public commenting. Any member can see
+  and share the plain-text code for their circles; treat it like a key.
+  Your display name applies per circle and is visible to that circle's
+  other members.
+</p>
+
+<h2>Reactions: "worth reading" and "I see it differently"</h2>
+<p>
+  Both reactions are tied to a page and a circle — they are not equally
+  visible:
+</p>
+<ul>
+  <li><strong>"Worth reading"</strong> is visible with your display name to
+      members of the same circle, even to people who never commented on
+      the page themselves.</li>
+  <li><strong>"I see it differently"</strong> stays anonymous: your
+      individual reaction never leaves the server, only a total count is
+      shown. In very small circles that count may still, in some cases,
+      allow conclusions about individual people.</li>
+</ul>
+
+<h2>Background notifications</h2>
+<p>
+  So the icon, bell and feed can show you whether someone replied and
+  what's happening in your circles, OpenComment checks in roughly every 30
+  minutes in the background — only for data from your own circles, never
+  whole page contents. You can turn this off any time under
+  <strong>Your data</strong>: then no alarm, no request and no badge runs
+  anymore. Opening the sidebar still loads comments as usual.
+</p>
+
+<h2>Where OpenComment doesn't work</h2>
+<p>
+  Login, account and payment pages, addresses containing an access token,
+  local and internal addresses (such as your router's interface), search
+  engines, social networks and mail inboxes are blocked — the extension
+  never even asks about a page there. This filtering is very good but not
+  complete: a router reachable by a name instead of a number (e.g.
+  <code>fritz.box</code>) is currently not detected.
+</p>
+
+<h2>Deleting and withdrawing</h2>
+<p>
+  These are two different paths, not synonyms:
+</p>
+<dl>
+  <dt>Deleting a single comment</dt>
+  <dd>It becomes invisible to everyone else and is replaced with a
+      placeholder so replies to it stay readable. The text and page
+      address remain stored on our server and readable to our operations
+      — there is currently no committed timeframe after which they are
+      automatically removed.</dd>
+
+  <dt>Withdrawing consent</dt>
+  <dd>Removes only your consent. Your comments, reactions and circle
+      memberships remain in place; the sidebar will ask again the next
+      time you open it.</dd>
+
+  <dt>Deleting your account</dt>
+  <dd>The complete path. Permanently removes your profile, your votes,
+      your reactions and your feedback. Your own comments without foreign
+      replies are deleted; your own comments that received replies are
+      anonymized (text and identity removed, a placeholder remains for the
+      reply). Your own reports remain, without personal reference, for
+      moderation purposes. If you were the last member of a circle, that
+      circle is deleted along with all its content. Locally stored data is
+      removed as well. The underlying technical sign-in with our backend
+      provider is not affected by this — we're still working on that
+      part.</dd>
+</dl>
+<p>
+  Uninstalling the extension does not delete any of your server-side data.
+  Note your identifier (visible under "Your data") before uninstalling if
+  you may want to request deletion later.
+</p>
+
+<h2>Storage and recipients</h2>
+<p>
+  Your data is stored with our backend provider Supabase (hosting region
+  Zurich, Switzerland/EU). Supabase is our data processor — not a third
+  party we "share" data with, but the technical service that runs the
+  server on our behalf. We do not pass data on to other third parties,
+  except where legally required.
+</p>
+<p>
+  We know neither your real name, nor your email address, nor your
+  location. Your pseudonymous identifier is created through anonymous
+  sign-in with Supabase — no login required.
+</p>
+<p>
+  Newly created identities are limited in how many comments they can post
+  during their first 24 hours, and several comments in quick succession
+  are slowed down. This is an automatic behavioral rule against automated
+  spam, not a judgment about content.
+</p>
+
+<h2>Your rights</h2>
+<p>
+  Under <strong>Your data</strong> in the sidebar you can, at any time,
+  view everything stored under your identifier, withdraw your consent, or
+  delete your account completely — no waiting period, no need to contact
+  us. For anything else, reach us at the email address above.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>
+  OpenComment is in active, early development. This policy may change,
+  particularly when new features introduce new categories of data. In that
+  case we will inform you separately and, where required, ask for renewed,
+  specific consent — today's consent does not automatically cover future
+  new data categories.
+</p>
+
+<footer>
+  <a href="index.html">Home</a> ·
+  <a href="faq.html">FAQ</a> ·
+  <a href="datenschutz.html">Deutsche Fassung</a>
+</footer>
+
+</div>
+</body>
+</html>
