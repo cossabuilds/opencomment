@@ -162,7 +162,13 @@
       placeholder so replies to it stay readable. The text and page
       address remain stored on our server and readable to our operations
       — there is currently no committed timeframe after which they are
-      automatically removed.</dd>
+      automatically removed.
+      <br>
+      This path is open to you as long as you are a member of the circle
+      the comment sits in. If you leave the circle, the comment stays there
+      and can no longer be deleted individually; from then on it is only
+      reachable via "Deleting your account" below. The extension points
+      this out when you leave.</dd>
 
   <dt>Withdrawing consent</dt>
   <dd>Removes only your consent. Your comments, reactions and circle
@@ -179,8 +185,11 @@
       were the last member of a circle, that
       circle is deleted along with all its content. Locally stored data is
       removed as well. The underlying technical sign-in with our backend
-      provider is not affected by this — we're still working on that
-      part.</dd>
+      provider is deleted along with it, including every session: a
+      previously copied credential can no longer be renewed. An
+      already-issued access key expires after its own short lifetime. Should
+      deleting the sign-in fail technically, it remains for at most 30 days
+      and is then removed by hand.</dd>
 </dl>
 <p>
   Uninstalling the extension does not delete any of your server-side data.
