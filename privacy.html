@@ -102,6 +102,16 @@
   <dt>Comments, replies, votes, reports, feedback</dt>
   <dd>Are sent to our server as soon as you submit them, each tied to your
       pseudonymous identity.</dd>
+
+  <dt>When your identity is created and renewed: IP address and browser
+      identifier</dt>
+  <dd>For anonymous sign-in to work at all, our backend provider
+      necessarily records your IP address and your browser's identifier
+      with each session — the same details that occur when you open any
+      website. We do not use them for analytics and do not build a profile
+      from them. They belong to the session, and a session does not end on
+      its own — deleting your account removes it along with these
+      details.</dd>
 </dl>
 
 <h2>Circles, display names and the join code</h2>
@@ -206,9 +216,10 @@
   except where legally required.
 </p>
 <p>
-  We know neither your real name, nor your email address, nor your
-  location. Your pseudonymous identifier is created through anonymous
-  sign-in with Supabase — no login required.
+  We know neither your real name nor your email address. We do not
+  determine a location — we do not evaluate the session's IP address (see
+  above) for that purpose. Your pseudonymous identifier is created through
+  anonymous sign-in with Supabase — no login required.
 </p>
 <p>
   Newly created identities are limited in how many comments they can post
