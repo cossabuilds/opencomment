@@ -32,7 +32,7 @@
 
 <h2>In short</h2>
 <p>
-  Orbitide is a Chrome extension for comments in <strong>circles</strong>
+  Orbitide is a browser extension for comments in <strong>circles</strong>
   — small, closed groups you can only join with a code. Nothing happens
   before you consent. Before you join a circle, the address of the page
   you're viewing never leaves your device.
@@ -70,8 +70,10 @@
   visit to compute that page's address — purely locally, with no network
   traffic. This is technically necessary so the extension knows
   immediately which page is open when you click its icon. If you'd rather
-  it didn't, you can set Orbitide's site access to "On click" in
-  Chrome's extension settings.
+  it didn't, you can restrict site access: in Chrome set it to "On click"
+  in the extension settings, in Firefox revoke the permission for all
+  websites under <code>about:addons</code>. Either way the script then only
+  runs on pages where you click Orbitide yourself.
 </p>
 
 <h2>What goes to our server — and when</h2>
