@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, noarchive">
+<title>Datenschutzerklärung — Orbitide</title>
+<meta name="description" content="Was Orbitide lokal speichert, was an den Server geht und wann, und wie du deine Daten löschst.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+  </svg>
+  <span class="brand">Orbitide</span>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="faq.html">FAQ</a>
+    <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+  </nav>
+</header>
+
+<h1>Datenschutzerklärung</h1>
+<p class="lead">
+  Stand: 18. November 2026. Diese Fassung ist massgeblich; die
+  <a href="privacy.html">englische Übersetzung</a> ist ein Service, im
+  Zweifel gilt immer diese deutsche Seite.
+</p>
+
+<h2>Kurz gesagt</h2>
+<p>
+  Orbitide ist eine Browser-Erweiterung für Kommentare in
+  <strong>Circles</strong> — kleinen, geschlossenen Runden, in die man nur
+  mit einem Code hineinkommt. Bevor du zustimmst, passiert nichts. Bevor du
+  einem Circle beitrittst, verlässt die Adresse der Seite, die du gerade
+  ansiehst, dein Gerät nicht.
+</p>
+
+<h2>Verantwortlicher</h2>
+<p>
+  E-Mail: cossabuilds@gmail.com
+</p>
+<p>
+  Das Projekt ist derzeit pausiert und nicht öffentlich gelistet; diese
+  Seite bleibt als Information über den dokumentierten Datenfluss online.
+  Die vollständigen Angaben zum Verantwortlichen einschliesslich
+  Postanschrift werden auf Anfrage über die oben genannte E-Mail-Adresse
+  mitgeteilt und mit dem Impressum vor einer öffentlichen Freigabe
+  ergänzt.
+</p>
+
+<h2>Was auf deinem Gerät bleibt</h2>
+<p>
+  Ein Teil der Daten verlässt dein Gerät nie. Dazu gehören dein Pseudonym
+  im lokalen Cache, deine Zustimmung, dein zuletzt aktiver Circle, sowie
+  die lokal geführten Listen, welche Antworten und Seiten du schon gesehen
+  bzw. abgehakt hast. Diese lokale Liste kann — weil sie aus den
+  Aktivitäts-Abfragen deiner Circles gespeist wird — auch Seitentitel und
+  Anzeigenamen anderer Circle-Mitglieder enthalten, etwa wer eine Seite mit
+  einem Stern hervorhebt. Das bleibt auf deinem Gerät, wird aber beim
+  Löschen deines Kontos mit entfernt.
+</p>
+<p>
+  Dein Zugangs-/Erneuerungs-Token liegt ebenfalls lokal, ist aber eine
+  Ausnahme: Es wird bei jeder Anmeldeprüfung an unseren Server geschickt —
+  das ist die technisch notwendige Grundlage jeder Authentifizierung, kein
+  zusätzlicher Datenabfluss über den hier beschriebenen Umfang hinaus,
+  aber eben eine Übertragung, nicht ein reines Vor-Ort-Bleiben.
+</p>
+<p>
+  Ausserdem läuft auf jeder Seite, die du besuchst, im Hintergrund ein
+  kleines Skript, das die Adresse der Seite berechnet — rein lokal, ohne
+  Netzwerkverkehr. Das ist technisch nötig, damit die Erweiterung beim
+  Klick auf ihr Symbol sofort weiss, welche Seite gerade offen ist. Wer das
+  nicht möchte, kann den Seitenzugriff einschränken: in Chrome über die
+  Erweiterungseinstellungen auf „Bei Klick“, in Firefox unter
+  <code>about:addons</code> durch Entziehen der Berechtigung für alle
+  Websites. In beiden Fällen läuft das Skript danach nur noch auf Seiten,
+  auf denen du Orbitide selbst anklickst.
+</p>
+
+<h2>Was zu unserem Server geht — und wann</h2>
+<dl>
+  <dt>Vor deiner Zustimmung: nichts</dt>
+  <dd>Weder wird eine Identität angelegt noch ein Request geschickt.</dd>
+
+  <dt>Nach Zustimmung, aber ohne aktiven Circle: keine Seitenadresse</dt>
+  <dd>Ohne aktiven Circle gibt es nichts zu laden — die Adresse der
+      aktuellen Seite verlässt dein Gerät nicht. Der Hintergrundsync (siehe
+      unten) läuft davon unabhängig bereits ab deiner Zustimmung — er fragt
+      nur, was in deinen Circles passiert ist, und liefert ohne Circle
+      einfach nichts zurück.</dd>
+
+  <dt>Sobald du einem Circle beigetreten bist</dt>
+  <dd>Die Adresse der gerade angezeigten Seite geht bei jedem Öffnen der
+      Seitenleiste <strong>und</strong> bei jedem Seitenwechsel, während die
+      Leiste offen ist, an unseren Server — als Suchbegriff, um Kommentare
+      und Reaktionen zu dieser Seite zu finden, nicht als fortlaufend
+      gespeicherter Browserverlauf. Sie steht dabei im Anfragekörper, nicht in der
+      Adresszeile des Requests, und taucht deshalb nicht in gewöhnlichen
+      Server-Zugriffsprotokollen auf.</dd>
+
+  <dt>Der Titel der Seite</dt>
+  <dd>Geht ausschliesslich mit, wenn du selbst etwas beiträgst — einen
+      Kommentar oder eine Reaktion. Beim blossen Ansehen einer Seite bleibt
+      der Titel lokal.</dd>
+
+  <dt>Kommentare, Antworten, Stimmen, Meldungen, Feedback</dt>
+  <dd>Gehen an unseren Server, sobald du sie absendest — jeweils verknüpft
+      mit deiner pseudonymen Kennung. Beim Feedback liegen zusätzlich die
+      Version der Erweiterung und der verwendete Browser bei — nur der Name
+      („Chrome“ oder „Firefox“), damit wir eine Meldung dem richtigen Stand
+      zuordnen können, ohne nachzufragen. Der Feedback-Dialog weist beim
+      Schreiben darauf hin.</dd>
+
+  <dt>Beim Anlegen und Erneuern deiner Kennung: IP-Adresse und
+      Browserkennung</dt>
+  <dd>Damit die anonyme Anmeldung überhaupt funktioniert, hält unser
+      Backend-Anbieter zu jeder Sitzung technisch bedingt deine IP-Adresse
+      und die Kennung deines Browsers fest — dieselben Angaben, die beim
+      Aufruf jeder Website anfallen. Wir nutzen sie nicht für Auswertungen
+      und erstellen daraus kein Profil. Sie gehören zur Sitzung, und eine
+      Sitzung endet nicht von selbst — mit dem Löschen deines Kontos
+      verschwindet sie samt diesen Angaben.</dd>
+</dl>
+
+<h2>Circles, Anzeigenamen und Zugangscode</h2>
+<p>
+  Wer den Zugangscode eines Circles hat, ist Mitglied und kann dort lesen
+  und schreiben — sonst niemand. Es gibt kein öffentliches Kommentieren.
+  Jedes Mitglied kann den Klartext-Code seiner Circles einsehen und
+  weitergeben; behandle ihn wie einen Schlüssel. Dein Anzeigename gilt
+  jeweils pro Circle und ist für die übrigen Mitglieder sichtbar.
+</p>
+
+<h2>Reaktionen: Stern und optionale Stimmung</h2>
+<p>
+  Eine Reaktion ist an eine Seite und einen Circle gebunden. Der Stern
+  bedeutet „das will ich meinem Circle zeigen“ — er ist weder ein privates
+  Lesezeichen noch eine Wertung. Danach kannst du optional eine positive
+  oder negative Stimmung dazu setzen. Beide Teile sind unterschiedlich
+  sichtbar:
+</p>
+<ul>
+  <li><strong>Der Stern</strong> ist mit deinem Anzeigenamen für die
+      Mitglieder desselben Circles sichtbar, auch für Personen, die den
+      Beitrag selbst nie kommentiert haben.</li>
+  <li><strong>Die Stimmung</strong> bleibt anonym: Deine einzelne Stimmung
+      verlässt den Server nie, nur eine Gesamtzahl je Circle wird gezeigt.
+      Weil der Stern namentlich sichtbar ist, lässt sich bei genau einem
+      Stern eine gesetzte Stimmung eindeutig dieser einen Person zuordnen;
+      in sehr kleinen Circles kann die Zahl auch bei mehreren Sternen auf
+      einzelne Personen rückschliessen lassen.</li>
+</ul>
+
+<h2>Hinweise im Hintergrund</h2>
+<p>
+  Damit Symbol, Glocke und Feed dir zeigen können, ob dir jemand geantwortet
+  hat und was in deinen Circles läuft, fragt Orbitide etwa alle 30
+  Minuten im Hintergrund nach — ausschliesslich Daten deiner eigenen
+  Circles, nie ganze Seiteninhalte. Du kannst das jederzeit unter
+  <strong>Meine Daten</strong> abschalten: Dann läuft kein Alarm, keine
+  Anfrage und kein Badge mehr. Öffnest du die Seitenleiste trotzdem, laden
+  Kommentare wie gewohnt.
+</p>
+
+<h2>Wo Orbitide nicht funktioniert</h2>
+<p>
+  Login-, Konto- und Bezahlseiten, Adressen mit einem Zugriffs-Token,
+  lokale und interne Adressen (etwa deine Router-Oberfläche),
+  Suchmaschinen, soziale Netzwerke und Mail-Postfächer sind gesperrt — die
+  Erweiterung fragt dort erst gar nicht nach einer Seite. Diese Filterung
+  ist sehr gut, aber nicht vollständig: Ein Router, der über einen Namen
+  statt einer Zahl erreichbar ist (z. B. <code>fritz.box</code>), wird
+  aktuell nicht erkannt.
+</p>
+
+<h2>Löschen und Widerrufen</h2>
+<p>
+  Das sind zwei unterschiedliche Wege, keine Synonyme:
+</p>
+<dl>
+  <dt>Einen einzelnen Kommentar löschen</dt>
+  <dd>Er wird für alle anderen unsichtbar und durch einen Platzhalter
+      ersetzt, damit Antworten darauf lesbar bleiben. Text und Seitenadresse
+      bleiben dabei serverseitig gespeichert und für unseren Betrieb
+      weiterhin lesbar — es gibt derzeit keine zugesagte Frist, nach der
+      sie automatisch entfernt werden.
+      <br>
+      Dieser Weg steht dir offen, solange du Mitglied des Circles bist, in
+      dem der Kommentar steht. Verlässt du den Circle, bleibt der Kommentar
+      dort stehen und lässt sich nicht mehr einzeln löschen; erreichbar
+      bleibt er dann nur noch über „Konto löschen“ weiter unten. Die
+      Erweiterung weist beim Verlassen darauf hin.</dd>
+
+  <dt>Zustimmung zurückziehen</dt>
+  <dd>Entfernt nur deine Zustimmung. Deine Kommentare, Reaktionen und
+      Circle-Mitgliedschaften bleiben bestehen; die Seitenleiste fragt beim
+      nächsten Öffnen erneut nach.</dd>
+
+  <dt>Konto löschen</dt>
+  <dd>Der vollständige Weg. Entfernt dein Profil, deine Stimmen, deine
+      Reaktionen und dein Feedback endgültig. Eigene Kommentare ohne fremde
+      Antworten werden gelöscht; eigene Kommentare, auf die geantwortet
+      wurde, werden anonymisiert (Text und Kennung entfernt, ein
+      Platzhalter bleibt für die Antwort stehen — die Seitenadresse dieser
+      Zeile bleibt dabei bestehen). Deine eigenen Meldungen
+      bleiben ohne Personenbezug für die Moderation erhalten. Warst du das
+      letzte Mitglied eines Circles, wird auch dieser mit allen Inhalten
+      gelöscht. Lokal gespeicherte Daten werden dabei ebenfalls entfernt.
+      Die zugrunde liegende technische Anmeldung bei unserem
+      Backend-Anbieter wird dabei mit gelöscht, samt allen Sitzungen: Ein
+      zuvor kopiertes Zugangsmittel lässt sich danach nicht mehr erneuern.
+      Ein bereits ausgestellter Zugangsschlüssel läuft nach seiner eigenen
+      kurzen Frist ab. Sollte das Löschen der Anmeldung technisch
+      fehlschlagen, bleibt sie längstens 30 Tage bestehen und wird dann von
+      Hand entfernt.</dd>
+</dl>
+<p>
+  Deinstallieren der Erweiterung löscht keine deiner Serverdaten. Notiere
+  dir vor der Deinstallation deine Kennung (unter „Meine Daten“ sichtbar),
+  falls du später eine Löschung beantragen willst.
+</p>
+
+<h2>Speicherung und Empfänger</h2>
+<p>
+  Deine Daten werden bei unserem Backend-Anbieter Supabase gespeichert
+  (Hosting-Region Zürich, Schweiz/EU). Supabase ist unser
+  Auftragsverarbeiter — keine dritte Partei, an die wir Daten
+  „weitergeben“, sondern der technische Dienstleister, der den Server für
+  uns betreibt. Eine Weitergabe an andere Dritte findet nicht statt, ausser
+  wenn wir gesetzlich dazu verpflichtet sind.
+</p>
+<p>
+  Wir kennen weder deinen echten Namen noch deine E-Mail-Adresse. Einen
+  Standort bestimmen wir nicht — die zur Sitzung anfallende IP-Adresse
+  (siehe oben) werten wir dafür nicht aus. Deine pseudonyme Kennung
+  entsteht über eine anonyme Anmeldung bei Supabase — kein Login nötig.
+</p>
+<p>
+  Neu angelegte Kennungen sind in den ersten 24 Stunden in der Anzahl ihrer
+  Kommentare begrenzt, und mehrere Kommentare in schneller Folge werden
+  gebremst. Das ist eine automatische Verhaltensregel gegen
+  automatisiertes Zumüllen, keine inhaltliche Bewertung.
+</p>
+
+<h2>Deine Rechte</h2>
+<p>
+  Unter <strong>Meine Daten</strong> in der Seitenleiste kannst du jederzeit
+  einsehen, was zu deiner Kennung in Orbitide gespeichert ist, deine
+  Zustimmung zurückziehen oder dein Konto vollständig löschen — ohne
+  Wartezeit, ohne Rückfrage an uns nötig. Die technischen Sitzungsdaten
+  deiner Anmeldung (siehe oben) sind in dieser Auskunft nicht enthalten.
+  Für alles Weitere erreichst du uns unter der oben genannten
+  E-Mail-Adresse.
+</p>
+
+<h2>Änderungen dieser Erklärung</h2>
+<p>
+  Orbitide befindet sich in aktiver, früher Entwicklung. Diese Erklärung
+  kann sich ändern, insbesondere wenn neue Funktionen neue Datenkategorien
+  einführen. In diesem Fall informieren wir gesondert und holen, wo nötig,
+  eine erneute, spezifische Einwilligung ein — die heutige Zustimmung deckt
+  zukünftige, neue Datenkategorien nicht automatisch ab.
+</p>
+
+<footer>
+  <a href="index.html">Start</a> ·
+  <a href="faq.html">FAQ</a> ·
+  <a href="privacy.html">English version</a>
+</footer>
+
+</div>
+</body>
+</html>
